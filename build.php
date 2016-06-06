@@ -17,16 +17,18 @@ $repos     = $paginator->fetchAll($organizationApi, 'repositories', $parameters)
 $user  = $client->api('user')->show('zendframework');
 
 /*
+// This is for testing only to figure out what data is fetched
+
 file_put_contents(
     'data/user.json',
     json_encode($user, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES)
 );
-*/
 
 file_put_contents(
     'data/repos.json',
     json_encode($repos, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES)
 );
+*/
 
 $templates = new League\Plates\Engine('templates');
 file_put_contents('dist/index.html', $templates->render('index', [

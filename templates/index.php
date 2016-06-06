@@ -24,6 +24,9 @@
                 Develop
             </th>
             <th>
+                Dependencies
+            </th>
+            <th>
                 License
             </th>
             <th>
@@ -69,7 +72,8 @@
                     <td>
                         <a href="https://github.com/<?php echo $this->escape($repo['full_name']); ?>"
                            title="View master source code">
-                            <img src="https://poser.pugx.org/<?php echo strtolower($dashedString($this->escape($repo['full_name']))); ?>/v/stable">
+                            <img
+                                src="https://poser.pugx.org/<?php echo strtolower($dashedString($this->escape($repo['full_name']))); ?>/v/stable">
                         </a>
                     </td>
                     <td>
@@ -80,15 +84,23 @@
                         </a>
                     </td>
                     <td>
+                        <a href="https://www.versioneye.com/php/zendframework:<?php echo $this->escape($repo['name']); ?>/1.0.0"
+                           title="View develop source code">
+                            <img src="https://www.versioneye.com/php/zendframework:<?php echo $this->escape($repo['name']); ?>/badge.svg">
+                        </a>
+                    </td>
+                    <td>
                         <?php if (!in_array($repo['name'], ['ZendSkeletonApplication', 'ZendDeveloperTools'])) : ?>
                             <a href="https://github.com/<?php echo $this->escape($repo['full_name']); ?>/blob/master/LICENSE.md"
                                title="View license">
-                                <img src="https://poser.pugx.org/<?php echo strtolower($dashedString($this->escape($repo['full_name']))); ?>/license">
+                                <img
+                                    src="https://poser.pugx.org/<?php echo strtolower($dashedString($this->escape($repo['full_name']))); ?>/license">
                             </a>
                         <?php else : ?>
                             <a href="https://github.com/<?php echo $this->escape($repo['full_name']); ?>/blob/master/LICENSE.txt"
                                title="View license">
-                                <img src="https://poser.pugx.org/<?php echo strtolower($dashedString($this->escape($repo['full_name']))); ?>/license">
+                                <img
+                                    src="https://poser.pugx.org/<?php echo strtolower($dashedString($this->escape($repo['full_name']))); ?>/license">
                             </a>
                         <?php endif; ?>
                     </td>

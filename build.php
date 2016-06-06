@@ -18,7 +18,7 @@ $paginator       = new Github\ResultPager($client);
 $repos           = $paginator->fetchAll($organizationApi, 'repositories', ['zendframework']);
 
 // Sort alphabetically
-usort($repos, function($a, $b) {
+usort($repos, function ($a, $b) {
     return $a['name'] <=> $b['name'];
 });
 
@@ -39,7 +39,8 @@ file_put_contents(
 echo "Generating static files...\n";
 $templates = new League\Plates\Engine('templates');
 file_put_contents('dist/index.html', $templates->render('index', [
-    'repos' => $repos,
+    'repos'        => $repos,
+    'dashedString' => new \Zend\Filter\Word\CamelCaseToDash(),
 ]));
 
 echo "Job's done!\n";

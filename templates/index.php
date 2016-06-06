@@ -69,34 +69,34 @@
                     <td>
                         <a href="https://github.com/<?php echo $this->escape($repo['full_name']); ?>"
                            title="View master source code">
-                            <img src="https://poser.pugx.org/<?php echo $this->escape($repo['full_name']); ?>/v/stable">
+                            <img src="https://poser.pugx.org/<?php echo strtolower($dashedString($this->escape($repo['full_name']))); ?>/v/stable">
                         </a>
                     </td>
                     <td>
                         <a href="https://github.com/<?php echo $this->escape($repo['full_name']); ?>/tree/develop"
                            title="View develop source code">
                             <img
-                                src="https://poser.pugx.org/<?php echo $this->escape($repo['full_name']); ?>/v/unstable">
+                                src="https://poser.pugx.org/<?php echo $dashedString($this->escape($repo['full_name'])); ?>/v/unstable">
                         </a>
                     </td>
                     <td>
                         <?php if (!in_array($repo['name'], ['ZendSkeletonApplication', 'ZendDeveloperTools'])) : ?>
                             <a href="https://github.com/<?php echo $this->escape($repo['full_name']); ?>/blob/master/LICENSE.md"
                                title="View license">
-                                <img src="https://poser.pugx.org/<?php echo $this->escape($repo['full_name']); ?>/license">
+                                <img src="https://poser.pugx.org/<?php echo strtolower($dashedString($this->escape($repo['full_name']))); ?>/license">
                             </a>
                         <?php else : ?>
                             <a href="https://github.com/<?php echo $this->escape($repo['full_name']); ?>/blob/master/LICENSE.txt"
                                title="View license">
-                                BSD-3-Clause
+                                <img src="https://poser.pugx.org/<?php echo strtolower($dashedString($this->escape($repo['full_name']))); ?>/license">
                             </a>
                         <?php endif; ?>
                     </td>
                     <td>
-                        <a href="https://github.com/<?php echo $this->escape($repo['full_name']); ?>/releases"
+                        <a href="https://packagist.org/packages/<?php echo strtolower($dashedString($this->escape($repo['full_name']))); ?>"
                            title="Releases">
                             <img
-                                src="https://poser.pugx.org/<?php echo $this->escape($repo['full_name']); ?>/downloads">
+                                src="https://poser.pugx.org/<?php echo strtolower($dashedString($this->escape($repo['full_name']))); ?>/downloads">
                         </a>
                     </td>
                 </tr>

@@ -1,0 +1,6 @@
+{
+    "require": {
+        "knplabs/github-api": "^1.7",
+        "league/plates": "^3.1"
+    }
+}

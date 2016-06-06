@@ -17,6 +17,11 @@ $organizationApi = $client->api('organization');
 $paginator       = new Github\ResultPager($client);
 $repos           = $paginator->fetchAll($organizationApi, 'repositories', ['zendframework']);
 
+// Sort alphabetically
+usort($repos, function($a, $b) {
+    return $a['name'] <=> $b['name'];
+});
+
 /*
 // This is for testing only to figure out what data is fetched
 
